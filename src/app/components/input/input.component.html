@@ -1,0 +1,10 @@
+<div>
+  <label class="p-4" [for]="name()">{{label()}}</label>
+  <input [id]="name()" [class]="input({size:size()})" [type]="type()" [placeholder]="placeholder()"
+    [formControl]="control()" />
+  <div class="text-red-500 p-4">
+    @if(control().invalid && control().touched){
+    {{control().errors | json}}
+    }
+  </div>
+</div>
